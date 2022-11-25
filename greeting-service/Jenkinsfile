@@ -1,25 +1,26 @@
 pipeline{
-    agent{
-        label "nodejs"
-    }
-    stages{
-        stage("Install dependencies"){
-            steps{
-                sh "npm ci"
-            }
-        }
+    agent any
+    // agent{
+    //     label "nodejs"
+    // }
+    // stages{
+    //     stage("Install dependencies"){
+    //         steps{
+    //             sh "npm ci"
+    //         }
+    //     }
 
-        stage("Check Style"){
-            steps{
-                sh "npm run lint"
-            }
-        }
+    //     stage("Check Style"){
+    //         steps{
+    //             sh "npm run lint"
+    //         }
+    //     }
 
-        stage("Test"){
-            steps{
-                sh "npm test"
-            }
-        }
+    //     stage("Test"){
+    //         steps{
+    //             sh "npm test"
+    //         }
+    //     }
 
         // Add the "Deploy" stage here
         stage("Deploy") {
@@ -30,5 +31,5 @@ pipeline{
                 '''
             }
         }
-    }
+    //}
 }
