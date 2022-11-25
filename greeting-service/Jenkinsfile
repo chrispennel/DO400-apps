@@ -23,6 +23,7 @@ pipeline{
     //     }
 
         // Add the "Deploy" stage here
+    stages {
         stage("Deploy") {
             steps {
                 sh '''
@@ -31,5 +32,5 @@ pipeline{
                 '''
             }
         }
-    //}
+    }
 }
