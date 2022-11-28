@@ -45,7 +45,7 @@ pipeline {
                             if (status != 0) {
                                 error("Tag not found in Quay")
                             }
-                            sh 'echo "in IF"'
+                            sh 'echo "in IF" DEPLOYTAG="$DEPLOY_TAG" TAGTODEPLOY="$TAG_TO_DEPLOY" '
                             TAG_TO_DEPLOY = params.DEPLOY_TAG
                         }
                         sh '''
