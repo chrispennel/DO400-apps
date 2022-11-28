@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label "mavec" } }
+    agent { node { label "maven" } }
     environment { APP_NAMESPACE = 'mfrwnc-recover' }
     stages {
         stage ("Test") {
