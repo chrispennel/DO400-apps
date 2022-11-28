@@ -2,7 +2,7 @@ pipeline {
     agent { node { label "maven" } }
     environment { APP_NAMESPACE = 'mfrwnc-recover' }
     parameters {
-        string(name: 'DEPLOY_TAG', default "", description: 'Deploy to Tag')
+        string(name: 'DEPLOY_TAG',  description: 'Deploy to Tag')
     }
     stages {
         stage ("Test") {
