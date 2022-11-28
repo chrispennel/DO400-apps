@@ -49,7 +49,7 @@ pipeline {
                             sh 'echo "in IF" DEPLOYTAG="$DEPLOY_TAG" TAGTODEPLOY="$TAG_TO_DEPLOY" '
                             TAG_TO_DEPLOY = params.DEPLOY_TAG
                         }
-                        sh "echo before deploy script: \"$TAG_TO_DEPLOY\""
+                        sh "echo before deploy script TAG_TO_DEPLOY: \"$TAG_TO_DEPLOY\""
                         sh """
                             ./scripts/deploy-image.sh \
                             -u $QUAY_USR \
