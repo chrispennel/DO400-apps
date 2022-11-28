@@ -1,0 +1,14 @@
+pipeline {
+    agent { node { label "mavec" } }
+    environment { APP_NAMESPACE = 'mfrwnc-recover' }
+    stages {
+        stage ("Test") {
+            steps {
+                dir("shopping-cart-v2") {
+                    sh './mvnw clean test'
+                }
+            }
+
+        }
+    }
+}
