@@ -35,6 +35,7 @@ pipeline {
                 dir ("shopping-cart-v2") {
                     script {
                         def TAG_TO_DEPLOY = "BUILD-$BUILD_NUMBER"
+                        sh "echo start script: $TAG_TO_DEPLOY"
                         if (params.DEPLOY_TAG != '' && params.DEPLOY_TAG != null) {
                             def status = sh(
                                 script: "./scripts/tag-exists-in-quay.sh $QUAY_USR/do400-recover ${params.DEPLOY_TAG}",
@@ -46,7 +47,7 @@ pipeline {
                             TAG_TO_DEPLOY = params.DEPLOY_TAG
                         }
                         sh '''
-                            echo "Tag to deploy: $TAG_TO_DEPLOY"
+                            echo "end script tag to deploy: $TAG_TO_DEPLOY"
                             ./scripts/deploy-image.sh \
                             -u $QUAY_USR \
                             -n $APP_NAMESPACE \
