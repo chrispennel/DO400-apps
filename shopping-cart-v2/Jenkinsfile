@@ -46,6 +46,7 @@ pipeline {
                             TAG_TO_DEPLOY = params.DEPLOY_TAG
                         }
                         sh '''
+                            echo "Tag to deploy: $TAG_TO_DEPLOY"
                             ./scripts/deploy-image.sh \
                             -u $QUAY_USR \
                             -n $APP_NAMESPACE \
